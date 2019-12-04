@@ -1,0 +1,65 @@
+package com.example.missionarioscanibais;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Point;
+import android.os.Bundle;
+import android.view.Display;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.ImageView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import Classes.Aresta;
+import Classes.Estado;
+
+public class MainActivity extends AppCompatActivity {
+
+    List<Estado> estadosList;
+    List<Aresta> arestasList;
+    Aresta aresta1, aresta2, aresta3;
+    Estado estado;
+    int i, scremWidth;
+    Button btnLevar;
+
+    ImageView imgCanoa, imgDireita, imgEsquerda;
+    CheckBox check_txt_1m1c, check_txt_1m, check_txt_1c, check_txt_2m, check_txt_2c;
+    int flag, check_1m, check_1c;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        estadosList = new ArrayList<>();    flag = 0;
+        arestasList = new ArrayList<>();    check_1c = 0; check_1m =0;
+
+        imgCanoa = (ImageView) findViewById(R.id.imgCanoa);
+        imgDireita = (ImageView) findViewById(R.id.imgDireita);
+        imgEsquerda = (ImageView)findViewById(R.id.imgEsq);
+        btnLevar = (Button)findViewById(R.id.btnLevar);
+
+        check_txt_1m1c = (CheckBox)findViewById(R.id.txt_1m1c);
+        check_txt_1m   = (CheckBox)findViewById(R.id.txt_1m);
+        check_txt_1c   = (CheckBox)findViewById(R.id.txt_1c);
+        check_txt_2m   = (CheckBox)findViewById(R.id.txt_2m);
+        check_txt_2c   = (CheckBox)findViewById(R.id.txt_2c);
+
+
+
+
+        btnLevar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imgCanoa.setX(110);
+            }
+        });
+
+
+        check_txt_1m1c.setOnClickListener(new
